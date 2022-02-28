@@ -11,9 +11,15 @@
     "test:watch": "yarn test --watch",
     "prepare": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*": [
-      "yarn lint --fix"
+      "yarn lint --fix",
+      "yarn test --bail"
     ]
   },
   "dependencies": {
@@ -24,6 +30,11 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.7",
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@types/jest": "^27.4.1",
@@ -31,14 +42,10 @@
     "@types/react": "^17.0.39",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "typescript": "^4.5.5",
     "husky": "^7.0.0",
+    "jest": "^27.5.1",
     "lint-staged": ">=10",
-    "prettier": "2.5.1",
-    "typescript": "^4.5.5"
+    "prettier": "2.5.1"
   }
 }
